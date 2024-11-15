@@ -46,40 +46,43 @@ body {
   min-height: 100vh;
   color: #fff;
   text-align: center;
+  overflow: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
-  max-width: 90%;
-  width: 400px;
+  max-width: 100%;
+  width: 90%;
   background: rgba(255, 255, 255, 0.2);
-  padding: 20px 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  word-wrap: break-word;
+  word-break: break-word; /* Break long words */
 }
 
 .countdown {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .time-box {
   background: rgba(0, 0, 0, 0.4);
   padding: 15px;
   border-radius: 10px;
-  width: 70px;
-  height: 90px;
+  width: 22%;
+  min-width: 70px; /* Ensure boxes don't get too small */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box; /* Include padding in width */
 }
 
 .time-box span {
@@ -89,18 +92,19 @@ h1 {
 
 .time-box p {
   margin: 5px 0 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .note {
   font-size: 1rem;
   margin-top: 15px;
+  line-height: 1.5;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 15px 20px;
+    padding: 15px;
     border-radius: 10px;
   }
 
@@ -108,9 +112,13 @@ h1 {
     font-size: 1.8rem;
   }
 
+  .countdown {
+    gap: 10px;
+  }
+
   .time-box {
-    width: 60px;
-    height: 80px;
+    width: 25%; /* Adjust width for better fit */
+    min-width: 60px;
     padding: 10px;
   }
 
@@ -119,7 +127,7 @@ h1 {
   }
 
   .time-box p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .note {
@@ -137,23 +145,24 @@ h1 {
   }
 
   .time-box {
-    width: 50px;
-    height: 70px;
+    width: 45%; /* Allow boxes to stack as pairs */
+    min-width: 50px;
     padding: 8px;
   }
 
   .time-box span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .time-box p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .note {
     font-size: 0.8rem;
   }
 }
+
 
 
 </style>
